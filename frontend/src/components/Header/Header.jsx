@@ -42,8 +42,8 @@ function Header() {
             </div>
             <div className="nav_right d-flex align-items-center gap-4">
                 <div className="nav_btns d-flex align-items-center gap-4">
-                     <Button className='btn secondary_btn'><Link to='/login'>Login</Link></Button>
-                     <Button className='btn primary_btn'><Link to='/singup'>singup</Link></Button>
+                     <Button className='btn secondary__btn '><Link to='/login'>Login</Link></Button>
+                     <Button className='btn primary__btn'><Link to='/singup'>singup</Link></Button>
                 </div>
                 <span className="mobile_menu">
                 <i class="ri-menu-line"></i>
