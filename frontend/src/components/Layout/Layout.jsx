@@ -5,9 +5,9 @@ import Routers from '../../router/Routers'
 function Layout() {
   return (
     <>
-    <Header/>
-    <Footer/>
-    <Routers/>
+      <Header />
+      <Routers />
+      <Footer />
     </>
   )
 }

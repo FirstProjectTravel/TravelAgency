@@ -7,13 +7,15 @@ import Login from '../pages/Home'
 import Signup from '../pages/Home'
 import Search from '../pages/Home'
 import ThankYou from '../pages/ThankYou'
+
+
 function Routers() {
   return (
    <Routes>
-    <Route path='/' element={<Navigate to='home'/>}/>
+    <Route path='/' element={<Navigate to='/home'/>}/>
     <Route path='/home' element={<Home/>}/>
     <Route path='/tours' element={<Tours/>}/>
-    <Route path='/tours/:id' element={<ToursDetails/>}/>
+    <Route path='/tours/:id' element={<TourDetails/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/singup' element={<Signup/>}/>
     <Route path='/thank-you' element={<ThankYou/>}/>
