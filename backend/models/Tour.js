@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 const tourSchema = new mongoose.Schema(
   {
     title: {
@@ -15,10 +15,6 @@ const tourSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    distance: {
-      type: Number,
-      required: true,
-    },
     photo: {
       type: String,
       required: true,
@@ -31,24 +27,8 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    maxGroupSize: {
-      type: Number,
-      required: true,
-    },
-
-    reviews: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Review",
-      },
-    ],
-
-    featured: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  { timestamps: true }
-);
-
-export default mongoose.model("Tour", tourSchema);
+  }
+  
+)
+const Tour = mongoose.model("Tour", tourSchema);
+module.exports =  Tour
