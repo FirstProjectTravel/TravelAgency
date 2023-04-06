@@ -19,6 +19,7 @@ function Header() {
         },
     ]
 
+
     const headerRef = useRef(null)
     const stickyHeaderFunc = ()=>{
         window.addEventListener('scroll', ()=>{
@@ -29,6 +30,7 @@ function Header() {
             }
         })
     }
+
 
     useEffect(()=>{
         stickyHeaderFunc()
