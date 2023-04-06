@@ -3,6 +3,7 @@ import '../styles/tour-details.css'
 import { Container,Row,Col,Form,ListGroup } from 'reactstrap'
 import {useParams} from 'react-router-dom'
 import tourData from '../assets/data/tours'
+import calculateAvgRating from './../Utils/avgRating'
 import avatar from './../assets/images/avatar.jpg'
 import Booking from '../components/Booking/Booking'
 function TourDetails() {
@@ -10,8 +11,8 @@ function TourDetails() {
   const reviewMsgRef=useRef('')
   const [tourRating,setTourRating]=useState(null)
 
-  const tour = tourData.find (tour=>tour.id==id)
-  const{photo,title,desc,price,reviews,city,distance,maxGroupSize}=tour
+  const tour = tourData.find (tour=>tour.id===id)
+  const{photo,title,desc,price,reviews,city,adress,distance,maxGroupSize}=tour
 
   const {totalRating, avgRating}= calculateAvgRating
  (reviews)
@@ -37,7 +38,7 @@ function TourDetails() {
                  <i class= "ri-star-s-fill" style={{color: "var(--secondary-color)" }}
                              ></i>
                        {avgRating===0 ? null : avgRating}
-                  {totalRating=== 0 ? ( "Not rated") : ( <span>({reviews?. length}) </span>)}
+                  {totalRating=== 0 ? ( "Not rated") : ( <span>({reviews?.length}) </span>)}
                    </span>
                    <span>
                    <i class="ri-map-pin-user-fill"></i>{adress}
@@ -64,7 +65,7 @@ function TourDetails() {
                 </div>
                 <div className="review-input">
                   <input type="text" ref={reviewMsgRef} placeholder='Share your thoughts' required/>
-                  <button className='btn text-white' type='submit'>Submit</button>
+                  <button className='btn primary__btn text-white' type='submit'>Submit</button>
                 </div>
               </Form>
               <ListGroup className='user-review'> 
