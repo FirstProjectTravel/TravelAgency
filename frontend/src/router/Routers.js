@@ -6,6 +6,7 @@ import ToursDetails from '../pages/Home'
 import Login from '../pages/Home'
 import Signup from '../pages/Home'
 import Search from '../pages/Home'
+import ThankYou from '../pages/ThankYou'
 function Routers() {
   return (
    <Routes>
@@ -15,6 +16,7 @@ function Routers() {
     <Route path='/tours/:id' element={<ToursDetails/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/singup' element={<Signup/>}/>
+    <Route path='/thank-you' element={<ThankYou/>}/>
     <Route path='/tours/search' element={<Search/>}/>
    </Routes>
   )
