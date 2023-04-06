@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container,Row,Col,Button} from 'reactstrap'
 import{Link} from 'react-router-dom'
+import Newsletter from './../shared/Newsletter'
 import '../styles/thank-you.css'
 function ThankYou() {
   return (
@@ -19,7 +20,7 @@ function ThankYou() {
             </Row>
         </Container>
     </section>
-    {/* <NewsLetter/> */}
+    <Newsletter/>
     </>
   )
 }
