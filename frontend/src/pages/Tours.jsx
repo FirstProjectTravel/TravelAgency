@@ -4,7 +4,7 @@ import tourData from "../assets/data/tours"
 import TourCard from './../shared/TourCard'
 import SearchBar from './../shared/SearchBar'
 import Newsletter from './../shared/Newsletter'
-import "../styles/tour.css"
+import "../styles/tours.css"
 import { Container,Row,Col } from 'reactstrap'
 function Tours() {
   const [pageCount,setPageCount]=useState(0)
@@ -39,6 +39,7 @@ function Tours() {
       </Row>
     </Container>
    </section>
+   <Newsletter/>
    </>
   )
 }

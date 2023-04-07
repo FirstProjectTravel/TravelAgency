@@ -1,0 +1,14 @@
+{
+  "name": "models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Review.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/index.js",
+    "db:setup": "node controller/userController"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

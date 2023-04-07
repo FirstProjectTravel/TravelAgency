@@ -29,7 +29,7 @@ function Home() {
                 <img src={worldImg} alt='img' />
               </div>
               <h1>Traveling opens the door to creating <span className="highlight">memories</span> </h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consectetur impedit illum asperiores debitis, eligendi consequatur omnis voluptates a quod sequi, cum quae dignissimos iusto tempora quaerat veritatis tenetur explicabo.</p>
+              <p>Escape the daily grind with Travel World. Our experienced agents will tailor your trip to your preferences and budget, taking care of everything from flights to tours. Book your adventure today and let us take you on a journey you'll never forget.</p>
             </div>
           </Col>
           <Col lg='2'>
@@ -81,9 +81,9 @@ function Home() {
         <div className="experience_content"></div>
         <Subtitle subtitle={'Experience'}/>
         <h2>With our all experience <br /> we will serve you</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        <p>With 15 years of experience and 12k+ successful trips, Travel World is your go-to travel agency. Our experienced team will create a custom itinerary tailored to your interests and preferences.
           <br /> 
-          Harum doloribus nemo deserunt eveniet distinctio quaerat.
+          Let us serve you with all our expertise.
           </p>
           <div className="counter_wrapper d-flex align-items-center gap-5">
             <div className="counter_box">

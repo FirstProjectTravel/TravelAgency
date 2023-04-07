@@ -52,7 +52,7 @@
 .auth-btn{
     background: var(--heading-color) !important;
     width: 100%;
-    color: #fff;
+    color: #fff !important;
 }
 .login-form P{
     font-size: 0.9rem;

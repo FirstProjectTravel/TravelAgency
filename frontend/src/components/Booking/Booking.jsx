@@ -21,7 +21,7 @@ function Booking({tour,avgRating}) {
 
     const handle=e=>{
         e.preventDefault()
-        navigate("/tank-you")
+        navigate("/thank-you")
     }
   return (
     <div className='booking'>
