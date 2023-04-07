@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
 const tourSchema = new mongoose.Schema(
   {
     title: {
@@ -42,13 +42,8 @@ const tourSchema = new mongoose.Schema(
         ref: "Review",
       },
     ],
-
-    featured: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  { timestamps: true }
-);
-
-export default mongoose.model("Tour", tourSchema);
+  }
+  
+)
+const Tour = mongoose.model("Tour", tourSchema);
+module.exports =  Tour
