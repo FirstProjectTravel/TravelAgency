@@ -35,8 +35,7 @@ function Layout() {
     }
   }, [emailToGetUn, users]);
 
-  // console.log(users, "users Layout");
-  // console.log(emailToGetUn, "emailToGetUn Layout");
+
   console.log(loggedUser, "loggedUser Layout");
 
   //========================= end getting the Users db===========================================

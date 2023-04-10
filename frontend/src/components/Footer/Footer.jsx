@@ -39,7 +39,7 @@ function Footer() {
           <Col lg='3'>
             <div className="logo">
               <img src={logo} alt="" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, autem.</p>
+              <p>Experience the world like never before with Travel World.</p>
               <div className="social_links d-flex align-items-center gap-4">
                 <span>
                   <Link to='#'><i class="ri-youtube-line"></i></Link>

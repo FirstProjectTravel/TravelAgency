@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import CommonSection from '../shared/CommonSection'
-// import tourData from "../assets/data/tours"
+
 import TourCard from './../shared/TourCard'
 import SearchBar from './../shared/SearchBar'
 import Newsletter from './../shared/Newsletter'
@@ -13,14 +13,6 @@ function Tours({tours,serchedTours, setSerchedTours}) {
   const [pageCount,setPageCount]=useState(0)
   const [page,setPage]=useState(0)
 
-//========================= search details ===========================
-
-
-
-
-
-
-//====================================================================
 
 
   useEffect(()=>{
@@ -41,6 +33,9 @@ function Tours({tours,serchedTours, setSerchedTours}) {
    </section>
    <section className='pt-0'>
     <Container>
+    {
+          !serchedTours.length && <h2 style={{ textAlign: "center" }}> No such tour</h2>
+        }
       <Row>
         {
           serchedTours?.map(tour => <Col lg='3' className='mb-4' key={tour._id}><TourCard tour={tour}/></Col>)

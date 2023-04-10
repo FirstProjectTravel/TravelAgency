@@ -27,14 +27,21 @@ function Routers({loggedUser,emailToGetUn, setEmailToGetUn}) {
     axios.get("http://localhost:4000/Tour").then(({data})=>{setTours(data);setSerchedTours(data)}).catch((err)=>{console.log(err)})},[reRender])
     
 
-//================================= searched data ===================================================================
+//==================================== weather =====================================
+const [weather,setWeather] = useState([])
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const apiKey = '4e9ad85dd70229b0cc0effc529a02c67';
+const location = 'Ariana,Tunisia';
 
-//================================= end searched data ===================================================================
+const apiUrlWithParams = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+useEffect(()=>{axios.get(apiUrlWithParams).then(({data}) => setWeather(data)).catch(error => {console.error('Error fetching weather data:', error)})},[])
+  //==================================== weather =====================================
 
   return (
    <Routes>
     <Route path='/' element={<Navigate to='/home'/>} tours={tours}/>
-    <Route path='/home' element={<Home tours={tours} serchedTours={serchedTours} setSerchedTours={setSerchedTours}/>}/>
+    <Route path='/home' element={<Home tours={tours} serchedTours={serchedTours} setSerchedTours={setSerchedTours} weather={weather}/>}/>
     <Route path='/tours' element={<Tours tours={tours} serchedTours={serchedTours} setSerchedTours={setSerchedTours}/>}/>
     <Route path='/tours/:id' element={<TourDetails tours={tours} loggedUser={loggedUser} renderReview={renderReview} />}/>
     <Route path='/login' element={<Login emailToGetUn={emailToGetUn}  setEmailToGetUn={setEmailToGetUn}/>}/>

@@ -47,12 +47,27 @@ const showUpdate = ()=>{
   setToggle(!toggle)
 }
 //================================= end Posting reviews ===================================================================
+//================================= select rating ===================================================================
+ const [clicked1, setClicked1] = useState(false);
+ const rate1=()=>{setClicked1(true); setClicked2(false);setClicked3(false);setClicked4(false);setClicked5(false)}
+ const style1 = clicked1 ? {color: 'red' } : {};
 
-//  const [clicked, setClicked] = useState(false);
-//  const rate=()=>{
-//   setClicked(true)
-//  }
-//  const style = clicked ? {color: 'red' } : {};
+ const [clicked2, setClicked2] = useState(false);
+ const rate2=()=>{setClicked1(true);setClicked2(true) ;setClicked3(false);setClicked4(false);setClicked5(false)}
+ const style2 = clicked2 ? {color: 'red' } : {};
+
+ const [clicked3, setClicked3] = useState(false);
+ const rate3=()=>{setClicked1(true);setClicked2(true);setClicked3(true); setClicked4(false);setClicked5(false)}
+ const style3 = clicked3 ? {color: 'red' } : {};
+
+ const [clicked4, setClicked4] = useState(false);
+ const rate4=()=>{setClicked1(true);setClicked2(true);setClicked3(true);setClicked4(true);setClicked5(false)}
+ const style4 = clicked4 ? {color: 'red' } : {};
+
+ const [clicked5, setClicked5] = useState(false);
+ const rate5=()=>{setClicked1(true);setClicked2(true);setClicked3(true);setClicked4(true);setClicked5(true)}
+ const style5 = clicked5 ? {color: 'red' } : {};
+
   return (
    <>
    <section>
@@ -113,11 +128,11 @@ const showUpdate = ()=>{
             {reviews.length === 1 && <h4>Reviews ({reviews?.length} review)</h4>}
               <Form onSubmit={handle}>
                 <div className='d-flex align-items-center gap-3 mb-4 rating-group'>
-                    <span onClick={()=>{setTourRating(1)}}>1<i class="ri-star-s-fill"></i></span>
-                    <span onClick={()=>{setTourRating(2)}}>2<i class="ri-star-s-fill"></i></span>
-                    <span onClick={()=>{setTourRating(3)}}>3<i class="ri-star-s-fill"></i></span>
-                    <span onClick={()=>{setTourRating(4)}}>4<i class="ri-star-s-fill"></i></span>
-                    <span onClick={()=>{setTourRating(5)}}>5<i class="ri-star-s-fill"></i></span>
+                    <span onClick={()=>{setTourRating(1);rate1()}} style={style1}>1<i className="ri-star-s-fill"></i></span>
+                    <span onClick={()=>{setTourRating(2);rate2()}} style={style2}>2<i className="ri-star-s-fill"></i></span>
+                    <span onClick={()=>{setTourRating(3);rate3()}} style={style3}>3<i className="ri-star-s-fill"></i></span>
+                    <span onClick={()=>{setTourRating(4);rate4()}} style={style4}>4<i className="ri-star-s-fill"></i></span>
+                    <span onClick={()=>{setTourRating(5);rate5()}} style={style5}>5<i className="ri-star-s-fill"></i></span>
                 </div>
                 <div className="review-input">
                   <input type="text" ref={reviewMsgRef} placeholder='Share your thoughts' required onChange={(event)=>setReviewText(event.target.value)}/>

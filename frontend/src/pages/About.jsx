@@ -20,7 +20,7 @@ function About() {
    <>
    <CommonSection title={'Contact'}/>
    <section id="contact">
-            <p>At TravelWorld, we believe that responsible travel is the key to a sustainable future. That's why we work with local communities and tour operators to promote eco-friendly and ethical travel practices. We believe that by traveling responsibly, we can make a positive impact on the world and create a brighter future for generations to come.
+            <p>At Travel World, we believe that responsible travel is the key to a sustainable future. That's why we work with local communities and tour operators to promote eco-friendly and ethical travel practices. We believe that by traveling responsibly, we can make a positive impact on the world and create a brighter future for generations to come.
               <br />
               <br />
               <span style={{ color: 'red' }} >

@@ -17,19 +17,9 @@ import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGalle
 import Testimonial from '../components/Testimonial/Testimonial'
 import Newsletter from '../shared/Newsletter'
 
-function Home({tours,serchedTours, setSerchedTours}) {
+function Home({tours,serchedTours, setSerchedTours,weather}) {
   
-  //==================================== weather =====================================
-// const [weather,setWeather] = useState([])
-// const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-// const apiKey = '4e9ad85dd70229b0cc0effc529a02c67';
-// const location = 'Ariana,Tunisia';
-
-// const apiUrlWithParams = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
-
-// axios.get(apiUrlWithParams).then(({data}) => setWeather(data)).catch(error => {console.error('Error fetching weather data:', error);});
-// console.log(weather,"weather")
-  //==================================== weather =====================================
+  
 
   return (
     <>
@@ -72,7 +62,7 @@ function Home({tours,serchedTours, setSerchedTours}) {
             <h5 className='services_subtitle'>What we serve</h5>
             <h2 className='services_title'>We offer our best services</h2>
           </Col>
-          <ServiceList/>
+          <ServiceList weather={weather} tours={tours}/>
         </Row>
       </Container>
     </section>
