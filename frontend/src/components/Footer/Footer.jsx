@@ -11,7 +11,7 @@ const quick_links = [
   },
   {
     path: '/about',
-    display: 'About'
+    display: 'Contact'
   },
   {
     path: '/tours',
@@ -21,17 +21,14 @@ const quick_links = [
 
 const quick_links2 = [
   {
-    path: '/gallery',
-    display: 'Gallery'
-  },
-  {
     path: '/login',
     display: 'Login'
   },
   {
-    path: '/register',
-    display: 'Register'
+    path: '/singup',
+    display: 'SignUp'
   },
+
 ]
 
 function Footer() {

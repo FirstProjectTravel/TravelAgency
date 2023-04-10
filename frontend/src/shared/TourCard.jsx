@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Card,CardBody } from 'reactstrap'
 import { Link } from "react-router-dom"
 import calculateAvgRating from '../Utils/avgRating'
@@ -7,9 +8,13 @@ import './tour-card.css'
 
 
 function TourCard({tour}) {
-    const { id, title, city, photo, price, featured, reviews} = tour;
+    const { _id, title, city, photo, price, featured,reviews} = tour;
     const {totalRating,avgRating} = calculateAvgRating(reviews)
 
+
+    // console.log(tour);
+    // {reviews.filter((e)=> e._id === _id).length}
+     
   return (
     <div className='tour_card'>
         <Card>
@@ -28,17 +33,17 @@ function TourCard({tour}) {
                 {totalRating ===0 ? (
                     'Not rated'
                     ) : (
-                    <span>({reviews.length})</span>
+                    <span>({reviews?.length})</span>
                     )}
                 
                 </span>
             </div>
-            <h5 className="tour_title"><Link to={`/tours/${id}`}>{title}</Link></h5>
+            <h5 className="tour_title"><Link to={`/tours/${_id}`}>{title}</Link></h5>
             
             <div className='card_bottom d-flex align-items-center justify-content-between mt-3'>
             <h5>${price} <span> /per person </span></h5>
             <button className="btn booking_btn">
-                <Link to={`/tours/${id}`}>Book Now</Link>
+                <Link to={`/tours/${_id}`}>Book Now</Link>
             </button>
             </div>
         </CardBody>

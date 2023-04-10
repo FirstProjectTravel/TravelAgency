@@ -1,6 +1,7 @@
 const express =require('express') 
 const {getAllUser,search,createUser,updateUser,deletUser}=require('../controller/userController')
 const router=express.Router();
+
 router.get('/',(req,res)=> {
     getAllUser().then((data)=>res.status(200).json(data)).catch((err)=>res.status(500).send("err found"))
 })

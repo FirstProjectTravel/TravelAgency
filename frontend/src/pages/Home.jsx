@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
+import axios from 'axios'
 import '../styles/home.css'
 import { Container, Row, Col } from 'reactstrap'
 import heroImg from '../assets/images/hero-img01.jpg'
@@ -16,7 +17,20 @@ import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGalle
 import Testimonial from '../components/Testimonial/Testimonial'
 import Newsletter from '../shared/Newsletter'
 
-function Home() {
+function Home({tours,serchedTours, setSerchedTours}) {
+  
+  //==================================== weather =====================================
+// const [weather,setWeather] = useState([])
+// const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+// const apiKey = '4e9ad85dd70229b0cc0effc529a02c67';
+// const location = 'Ariana,Tunisia';
+
+// const apiUrlWithParams = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+// axios.get(apiUrlWithParams).then(({data}) => setWeather(data)).catch(error => {console.error('Error fetching weather data:', error);});
+// console.log(weather,"weather")
+  //==================================== weather =====================================
+
   return (
     <>
     <section>
@@ -47,7 +61,7 @@ function Home() {
               <img src={heroImg02} alt='img' />
             </div>
           </Col>
-          <SearchBar />
+          <SearchBar tours={tours} setSerchedTours = {setSerchedTours}/>
         </Row>
       </Container>
     </section>
@@ -69,7 +83,7 @@ function Home() {
           <Subtitle subtitle={'Explore'}/>
           <h2 className="featured_tour-title">Our featured tours</h2>
           </Col>
-          <FeaturedToursList/>
+          {tours.length && <FeaturedToursList  tours={tours}/>}
         </Row>
       </Container>
     </section>

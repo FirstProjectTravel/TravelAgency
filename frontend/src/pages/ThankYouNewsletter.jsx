@@ -4,8 +4,7 @@ import{Link} from 'react-router-dom'
 import Newsletter from './../shared/Newsletter'
 import '../styles/thank-you.css'
 
-
-function ThankYou() {
+function ThankYouNewsLetter() {
   return (
     <>
     <section>
@@ -15,9 +14,9 @@ function ThankYou() {
                  <div className='thank-you'>
                     <span><i class="ri-checkbox-circle-line"></i></span>
                     <h1 className='mb-3 fw-semibold'>Thank YOU!</h1>
-                    <h3 className='mb-4'>your tour is booked.</h3>
+                    <h3 className='mb-4'>for subscribing to our newsletter.</h3>
                     <Button className='btn primary__btn w-25'><Link to='/home'>Back to Home</Link></Button>
-
+                    
                  </div>
                 </Col>
             </Row>
@@ -28,4 +27,4 @@ function ThankYou() {
   )
 }
 
-export default ThankYou
+export default ThankYouNewsLetter

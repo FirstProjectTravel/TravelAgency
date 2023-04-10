@@ -12,6 +12,9 @@ height: 2.3rem;
 .hero_content h1 .highlight{
     color: var(--secondary-color); 
 }
+.highlight{
+    background-color: white;
+}
 .hero_content p {
     font-size: 1.1rem;
     color: var(--text-color); 

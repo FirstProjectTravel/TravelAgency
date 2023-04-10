@@ -1,28 +1,45 @@
 import React,{useState} from 'react'
+import axios from 'axios'
 import './booking.css'
 import{Form,FormGroup,ListGroup,ListGroupItem,Button} from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
-function Booking({tour,avgRating}) {
-    const {price,reviews}=tour
+
+
+function Booking({loggedUser,tour,avgRating}) {
+    const {price,reviews,_id}=tour[0]
     const navigate=useNavigate()
  const [credent,setCredent]=useState({
-    userId:'01',
-    userEmail:'example@gmail.com',
+    tourId:_id,
+    username:loggedUser,
     fullName:'',
-    phone:'',
+    Phone:'',
     guestSize:1,
     bookAt:''
  })
+
  const serviceFee=10
  const totalAmount=Number(price)* Number(credent.guestSize) + Number(serviceFee)
     const handleChange=e=>{
         setCredent(prev=>({...prev,[e.target.id]:e.target.value}))
     }
 
+//==================== Booking (inserting data to db) ======================================================
     const handle=e=>{
         e.preventDefault()
-        navigate("/thank-you")
+        if(!credent.username){
+          alert("You need to LogIn to book your trip") //Only Book when you're Logged In
+        }
+        else if(credent.fullName ==='' || credent.Phone ==='' || credent.bookAt ===''){
+          alert("All fields are required") // all fields are not empty
+        }
+        else {
+          axios.post("http://localhost:4000/Book/add",credent).then((res)=>{navigate("/thank-you")}).catch((err)=>{console.log(err)})
+        }
     }
+
+        
+//============================================================================================================
+
   return (
     <div className='booking'>
  <div className="booking-top d-flex align-items-center justify-content-between">

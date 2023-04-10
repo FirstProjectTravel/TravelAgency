@@ -1,25 +1,41 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios'
 import CommonSection from '../shared/CommonSection'
-import tourData from "../assets/data/tours"
+// import tourData from "../assets/data/tours"
 import TourCard from './../shared/TourCard'
 import SearchBar from './../shared/SearchBar'
 import Newsletter from './../shared/Newsletter'
 import "../styles/tours.css"
 import { Container,Row,Col } from 'reactstrap'
-function Tours() {
+
+
+function Tours({tours,serchedTours, setSerchedTours}) {
   const [pageCount,setPageCount]=useState(0)
   const [page,setPage]=useState(0)
+
+//========================= search details ===========================
+
+
+
+
+
+
+//====================================================================
+
+
   useEffect(()=>{
     const pages =Math.ceil(5/4)
     setPageCount(pages)
   },[page])
+  
+
   return (
    <>
    <CommonSection title={'All Tours'}/>
    <section>
     <Container>
       <Row>
-        <SearchBar/>
+        <SearchBar setSerchedTours = {setSerchedTours} tours = {tours}/>
       </Row>
     </Container>
    </section>
@@ -27,7 +43,7 @@ function Tours() {
     <Container>
       <Row>
         {
-          tourData?.map(tour=> <Col lg='3' className='mb-4' key={tour.id}><TourCard tour={tour}/></Col>)
+          serchedTours?.map(tour => <Col lg='3' className='mb-4' key={tour._id}><TourCard tour={tour}/></Col>)
         }
         <Col lg="12">
           <div className="pagination d-flex align-items-center justify-content-center mt-4 gap-3">

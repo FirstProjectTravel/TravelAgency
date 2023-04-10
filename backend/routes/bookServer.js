@@ -26,24 +26,11 @@ router.delete("/:id",(req,res)=>{
 })
 
 
-router.post("/add/:userid/:tourid",(req,res)=>{
-    const { userid, tourid } = req.params;
-    const { startDate, endDate } = req.body;
+router.post("/add",(req,res)=>{
 
-    Promise.all([
-      User.findById(userid),
-      Tour.findById(tourid)
-    ])
-    .then(([user, tour]) => {
-      if (!user || !tour) {
-        throw new Error('Invalid user or tour id');
-      }
-      return createBook(user,tour, tour.title, tour.price, startDate, endDate);
-    })
-    .then(data => res.status(200).json(data))
+    createBook(req.body.tourId, req.body.username, req.body.fullName, req.body.Phone, req.body.guestSize, req.body.bookAt).then(data => res.status(200).json(data))
     .catch(err => {
-      console.error(err);
-      res.status(500).send(err);
+      res.status(500).send(err)
     });
 });
 
