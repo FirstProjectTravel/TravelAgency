@@ -43,7 +43,7 @@ function Home({tours,serchedTours, setSerchedTours,weather}) {
           </Col>
           <Col lg='2'>
             <div className='hero-img-box mt-4'>
-              <video src={heroVideo} alt='' controls />
+              <video src={heroVideo} alt='' controls autoPlay loop volume={0.1} />
             </div>
           </Col>
           <Col lg='2'>
